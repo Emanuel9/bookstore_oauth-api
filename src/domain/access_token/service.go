@@ -40,6 +40,8 @@ func (s *service) GetById(accessTokenId string) (*AccessToken, *errors.RestError
 }
 
 func (s *service) Create(at AccessToken) *errors.RestError {
+	//TODO: Support both grant types: client_credentials and password
+
 	if err := at.Validate(); err != nil {
 		return err
 	}
